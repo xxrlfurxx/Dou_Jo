@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProjectModal from "../../components/ProjectModal";
 import { useSelector } from "react-redux";
 import { RootState } from "../../provider";
 import ProjectDetailOffCanvas from "../../components/ProjectDetailOffCanvas";
 import MilestoneCreateOffCanvas from "../../components/MilestoneCreateOffCanvas";
+import api from "../../api/project";
+import { ProjectItem } from "../../provider/modules/project";
+import { apiResolver } from "next/dist/server/api-utils";
+
 
 function Project() {
   const project = useSelector((state: RootState) => state.project);
@@ -14,8 +18,17 @@ function Project() {
   const [modalShow, setModalShow] = useState(false);
 
   const [offcanvasShow, setOffcanvasShow] = useState(false);
-  const [MilestoneoffcanvasShow, setMilestoneOffcanvasShow] = useState(false);
+  const [MilestoneoffcanvasShow, setMilestoneOffcanvasShow ] = useState(false);
   const [selectedId, setSelectedId] = useState(0);
+
+  // async: 비동기 처리를 할 수 있는 함수
+  // 코드가 순차적인 처리가 아닌 다른 컨텐츠에 수행될 수 있도록 함 
+  
+   
+
+  useEffect(() => {
+   
+  }, []); 
 
   return (
     <>

@@ -6,6 +6,7 @@ import createSagaMiddleware from "@redux-saga/core";
 import taskModalReducer from "./modules/taskModal";
 import statusReducer from "./modules/status";
 import projectReducer from "./modules/project";
+import rootSaga from "../middleware/modules/project";
 // saga middleware 생성
 // middleware: 중간에 뭔가를 처리하는 소프트웨어
 // redux saga는 redux 상태처리 전/후에 뭔가를 해주는 라이브러리
@@ -44,7 +45,7 @@ export const store = configureStore({
 
 // saga middleware를 실행
 // rootSaga와 하위에 정의한 감지(take)할 Saga Action들에 대해서 감지 시작
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 // typesciprt에서는 몇가지 타입 선언을 해야함
 

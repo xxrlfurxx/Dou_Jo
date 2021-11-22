@@ -10,6 +10,7 @@ import { ProjectItem, addProject } from "../provider/modules/project";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../provider";
 import { useRouter } from "next/router";
+import { requestAddProject } from "../middleware/modules/project";
 
 // const [modalShow, setModalShow] = React.useState(false);
 
@@ -43,7 +44,8 @@ function ProjectModal({ show, onHide }: ProjectModalProp) {
       memo: memo.current.value,
       milestone: [],
     };
-    dispatch(addProject(item));
+    // dispatch(addProject(item));   // 기존 redux action
+     dispatch(requestAddProject(item));  // saga action으로 대체
     router.push(`/project`);
   };
 
