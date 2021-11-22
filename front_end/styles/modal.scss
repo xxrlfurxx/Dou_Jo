@@ -1,0 +1,391 @@
+@import "./app-variables.scss";
+
+.modal_wrap {
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color: #57575734, $alpha: 0.5);
+  .modal_content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 16vh;
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: auto;
+    text-align: left;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    .modal_title {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-weight: 600;
+      .task_Id {
+        padding-right: 3rem;
+      }
+    }
+    .form_body {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      margin: 20px 0 12px 0;
+      // overflow-y: scroll;
+      font-size: 0.75rem;
+      /* essential value icon */
+      i {
+        color: $custom_warning_color;
+        font-size: 3px;
+      }
+      input {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        border-radius: 4px;
+        padding-left: 14px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+      }
+      input:focus {
+        border-color: $custom_primary_color;
+      }
+      select {
+        height: 45px;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        border-radius: 4px;
+        padding-left: 14px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.3s ease;
+      }
+      select:focus {
+        border-color: $custom_primary_color;
+      }
+      select:invalid {
+        color: gray;
+      }
+      textarea {
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        border-radius: 4px;
+        padding: 2px 14px 0 14px;
+        border: 1px solid #ccc;
+        border-bottom-width: 2px;
+        transition: all 0.1s ease;
+      }
+      .taskItem_txt {
+        height: 45px;
+        width: 100%;
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        span {
+          cursor: pointer;
+        }
+        span:hover {
+          background: $custom_bg_hover_color;
+          border-radius: 5px;
+        }
+        .project_list {
+          position: relative;
+          background: #fff;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+          .selectableProject {
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          .selectableProject:hover {
+            background: $custom_bg_hover_color;
+          }
+        }
+      }
+      /* ----Project---- */
+      .task_project {
+        grid-area: "project";
+        width: 100%;
+        .project_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+      }
+      /* ----Milestone---- */
+      .task_milestone {
+        grid-area: "milestone";
+        width: 100%;
+        .milestone_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+      }
+      /* ----Summary---- */
+      .task_summary {
+        grid-area: "summary";
+        width: 100%;
+        .summary_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+        .edit_input {
+          position: relative;
+          .edit_summary_wrap {
+            // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            .edit_summary_input {
+              width: calc(100% - 80px);
+              border: none;
+              height: 23px;
+            }
+            .bi-check {
+              background: #fff;
+              color: $custom_primary_color;
+              border-radius: 4px;
+              font-size: 1rem;
+              margin: 0 2px 0 2px;
+            }
+            .bi-x {
+              // border-left: 1px solid #ccc;
+              background: #fff;
+              color: $custom_primary_color;
+              font-size: 1rem;
+              margin: 0 2px 0 4px;
+            }
+          }
+          .edit_summary_wrap {
+            background: none;
+          }
+        }
+      }
+      /* ----Current State---- */
+      .task_currentState {
+        grid-area: "currentState";
+        width: 100%;
+        .currentState_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+      }
+      /* ----Reporter---- */
+      .task_reporter {
+        grid-area: "reporter";
+        width: 100%;
+        .reporter_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+      }
+      /* ----Description----*/
+      .task_description {
+        grid-area: "description";
+        width: 100%;
+        .description_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+        .edit_input {
+          position: relative;
+          .edit_des_wrap {
+            // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            .edit_description_input {
+              width: calc(100% - 80px);
+              border: none;
+              height: 23px;
+            }
+            .bi-check {
+              background: #fff;
+              color: $custom_primary_color;
+              border-radius: 4px;
+              font-size: 1rem;
+              margin: 0 2px 0 2px;
+            }
+            .bi-x {
+              // border-left: 1px solid #ccc;
+              background: #fff;
+              color: $custom_primary_color;
+              font-size: 1rem;
+              margin: 0 2px 0 4px;
+            }
+          }
+          .edit_des_wrap {
+            background: none;
+          }
+        }
+      }
+      /* ----Estimated Time----*/
+      .task_estimatedTime {
+        grid-area: "estimatedTime";
+        width: 100%;
+        .estimatedTime_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+        .edit_input {
+          position: relative;
+          .edit_ETime_wrap {
+            // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            .edit_ETime_input {
+              width: calc(100% - 80px);
+              border: none;
+              height: 23px;
+            }
+            .bi-check {
+              background: #fff;
+              color: $custom_primary_color;
+              border-radius: 4px;
+              font-size: 1rem;
+              margin: 0 2px 0 2px;
+            }
+            .bi-x {
+              // border-left: 1px solid #ccc;
+              background: #fff;
+              color: $custom_primary_color;
+              font-size: 1rem;
+              margin: 0 2px 0 4px;
+            }
+          }
+          .edit_ETime_wrap {
+            background: none;
+          }
+        }
+      }
+      /* ----Usage Time----*/
+      .task_usageTime {
+        grid-area: "usageTime";
+        width: 100%;
+        .usageTime_icon {
+          cursor: default;
+          font-weight: 600;
+        }
+        .edit_input {
+          position: relative;
+          .edit_UTime_wrap {
+            // box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+            .edit_UTime_input {
+              width: calc(100% - 80px);
+              border: none;
+              height: 23px;
+            }
+            .bi-check {
+              background: #fff;
+              color: $custom_primary_color;
+              border-radius: 4px;
+              font-size: 1rem;
+              margin: 0 2px 0 2px;
+            }
+            .bi-x {
+              // border-left: 1px solid #ccc;
+              background: #fff;
+              color: $custom_primary_color;
+              font-size: 1rem;
+              margin: 0 2px 0 4px;
+            }
+          }
+          .edit_UTime_wrap {
+            background: none;
+          }
+        }
+      }
+    }
+    // modal btn
+    .modal_btn {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 8px 40px 8px 70px;
+      /* ----Enroll button---- */
+      .enroll_btn {
+        color: $custom_txt_color;
+        font-size: 1.2rem;
+        margin: 8px;
+        border-radius: 7px;
+        padding: 0 3px 0 3px;
+        cursor: pointer;
+      }
+      .enroll_btn:hover {
+        background: $custom_bg_color; //$custom_primary_color_hover;
+      }
+      /* ----Delete button---- */
+      .delete_btn {
+        color: $custom_txt_color;
+        font-size: 1.2rem;
+        margin: 8px;
+        border-radius: 7px;
+        padding: 0 3px 0 3px;
+        cursor: pointer;
+      }
+      .delete_btn:hover {
+        background: $custom_bg_color; //$custom_primary_color_hover;
+      }
+      /* ----Cancel button---- */
+      .cancel_btn {
+        font-size: 1.2rem;
+        margin: 8px;
+        border-radius: 7px;
+        padding: 0 3px 0 3px;
+        cursor: pointer;
+      }
+      .cancel_btn:hover {
+        background: $custom_bg_color;
+      }
+    }
+  }
+}
+/* @@ media query @@ */
+
+/* @ default @ */
+.modal_wrap {
+  .modal_content {
+    .form_body {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "project"
+        "milestion"
+        "summary"
+        "currentState"
+        "reporter"
+        "description"
+        "estimatedTime"
+        "usageTime";
+    }
+  }
+}
+/* @ medium @*/
+@media (min-width: 768px) {
+  .modal_wrap {
+    .modal_content {
+      .form_body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "project milestion"
+          "summary reporter"
+          "currentState estimatedTime"
+          "description description";
+      }
+    }
+  }
+}

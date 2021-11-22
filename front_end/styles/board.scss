@@ -1,0 +1,212 @@
+@import "./app-variables.scss";
+.board {
+  h2 {
+    cursor: default;
+  }
+  .features {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 1.5rem;
+    .search_task {
+      i {
+        margin: 7px 0 0 15px;
+      }
+      input {
+        // position: absolute;
+        height: 40px;
+        // min-width: 70px;
+        left: 0;
+        top: 0;
+        border-radius: 12px;
+        outline: none;
+        border: none;
+        background: $custom_bg_color;
+        padding-left: 50px;
+        font-size: 1rem;
+        color: $custom_input_txt_color;
+      }
+      .bi-search {
+        position: absolute;
+        z-index: 99;
+        color: $custom_input_txt_color;
+        font-size: 1.2rem;
+      }
+    }
+    .features_btn {
+      margin-top: 7px;
+      margin-left: 25px;
+      .board_btn:hover {
+        cursor: pointer;
+        background: $custom_bg_hover_color; //$custom_bg_secondary_color;
+        border-radius: 7px;
+      }
+    }
+  }
+  .taskboard {
+    display: flex;
+    overflow-x: scroll;
+    min-height: 350px;
+    .taskboard_status {
+      background-color: $custom_bg_color;
+      padding: 0.5rem 0.25rem 0.5rem 0.25rem;
+      // padding-right: 0.5rem;
+      // padding-left: 0.5rem;
+      margin-right: 0.7rem;
+      width: 200px;
+      min-height: 70px;
+      // max-width: 208px; // 207.2px 나옴
+      min-width: 10vw;
+      height: fit-content;
+      text-align: left;
+      border-radius: 2%;
+      .status_name {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        display: flex;
+        // justify-content: space-between;
+        // flex-wrap: wrap;
+        width: 100%;
+        cursor: default;
+        font-size: 1rem;
+        font-weight: 600;
+        .status_title {
+          width: calc(100% - 18px);
+          margin-right: 2px;
+        }
+        .status_title:hover {
+          background-color: $custom_bg_hover_color; // $custom_bg_secondary_color;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        .status_detail {
+          margin: 0 2px 0 2px;
+          i:hover {
+            background-color: $custom_bg_hover_color;
+            border-radius: 4px;
+          }
+          .status_detail_wrap {
+            position: absolute;
+            .status_delete_btn {
+              position: relative;
+              // width: 70px;
+              top: 3px;
+              left: -25px;
+              background: #fff;
+              padding: 0 10px 0 10px;
+              box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.26);
+              border-radius: 4px;
+            }
+            .status_delete_btn:hover {
+              background-color: $custom_bg_hover_color;
+            }
+          }
+        }
+        .status_detail {
+          cursor: pointer;
+        }
+      }
+      .edit_status_name {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        cursor: default;
+        font-size: 1rem;
+        font-weight: 600;
+        background: #fff;
+        border-radius: 4px;
+        .edit_status_input {
+          width: calc(100% - 20px);
+          height: 100%;
+          font-size: 1rem;
+          outline: none;
+          border: none;
+          // padding-right: 20px;
+          font-weight: 600;
+        }
+        .edit_status_btn_check :hover {
+          background: $custom_bg_hover_color;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      }
+      .task_statusBox {
+        min-height: 1.5rem;
+        .tasks {
+          display: flex;
+          flex-direction: column;
+          background-color: #fff;
+          margin: 0.6rem 0 0 0;
+          height: fit-content;
+          border-radius: 2%;
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+          text-align: center;
+        }
+        .tasks:hover {
+          //
+          background-color: $custom_bg_secondary_color;
+          box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+.board .taskboard .taskboard_status .task_statusBox .tasks .task_wrap {
+  padding: 4px 5px;
+}
+.board
+  .taskboard
+  .taskboard_status
+  .task_statusBox
+  .tasks
+  .task_wrap
+  .task_summary {
+  //
+  font-size: 0.9rem;
+  font-weight: 500;
+  // font-family: "Varela Round", sans-serif;
+}
+.board
+  .taskboard
+  .taskboard_status
+  .task_statusBox
+  .tasks
+  .task_wrap
+  > .task_description {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.board
+  .taskboard
+  .taskboard_status
+  .task_statusBox
+  .tasks
+  .task_wrap
+  .task_description
+  .task_number {
+  font-size: 0.9rem;
+  height: 20px;
+  margin-left: 0.4rem;
+  margin-top: 0.2rem;
+}
+.board
+  .taskboard
+  .taskboard_status
+  .task_statusBox
+  .tasks
+  .task_wrap
+  .task_description
+  .task_reporter_thumb {
+  width: 24px;
+  height: 24px;
+  padding: 2px;
+  margin-left: -2px;
+  box-shadow: (#fff) 0 0 0 2px;
+  background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+}

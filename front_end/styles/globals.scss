@@ -1,0 +1,112 @@
+@import "./app-variables.scss";
+@import "./skins/dark";
+@import "./skins/default";
+@import "./bootstrap-custom.scss";
+@import "./board.scss";
+@import "./modal.scss";
+@import "./stateBtn.scss";
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap");
+// font-family: "Zen Kaku Gothic Antique", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+// font-family: 'Varela Round', sans-serif;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.button-hover {
+  button:hover {
+    color: rgb(243, 244, 247);
+  }
+}
+
+.app-bar {
+  background: rgb(10, 85, 223);
+  height: auto;
+  width: 100%;
+  /* display: flex; */
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  grid-area: header;
+}
+.app-bar > h1 {
+  margin: 0 0 0.2rem 0;
+}
+.nav-bar {
+  // background: rgb(247, 246, 243);
+  //   width: 100%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   color: rgba(25, 23, 17, 0.6);
+  //   font-weight: 600;
+  //   font-size: 20px;
+  grid-area: nav;
+  //   text-align: left;
+  //   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.contents {
+  grid-area: contents;
+  padding: 1rem 0 0 2.5rem;
+  background: #fff; //#e4e9f7;
+}
+.footer {
+  grid-area: footer;
+}
+
+/* default */
+.app-bar {
+  margin: 0 0 5px 0;
+}
+.wrap {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "contents contents"
+    "footer footer";
+}
+/* medium */
+@media (min-width: 768px) {
+  .wrap {
+    grid-template-columns: 1fr 4fr; // 일단 임시로 비율만 정해놓음 아직 1에 뭐 넣을지 못정함
+    grid-template-areas:
+      "header header"
+      "nav nav"
+      "contents contents"
+      "footer footer";
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .app-bar {
+    margin: 0;
+  }
+  .nav-bar {
+    height: 100vh;
+    // padding: 2px;
+  }
+  .wrap {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1.5fr 5fr 3.5fr;
+    grid-template-areas:
+      "header  header    header"
+      "nav     contents  contents"
+      "footer  contents  contents";
+  }
+}

@@ -1,0 +1,9 @@
+/* 어두운 테마 */
+$background-color: #32343a !default;
+$text-color: #eaeaea !default;
+$primary-color: #ffbf00 !default;
+$border-color: mix(#fff, $background-color, 20%) !default;
+
+$link-color: rgba(255, 116, 151, 0.87) !default;
+// $link-color-hover: mix(#fff, $link-color, 25%) !default;
+// $link-color-visited: original mix(#000, $link-color, 25%) !default;
