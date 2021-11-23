@@ -1,20 +1,18 @@
 Spring:
-  application:
-    name: taskboard
-#  datasource:
-#      driver-class-name: org.postgresql.Driver
-#      url: jdbc:postgresql://database-1.cvhfkam9nhr2.ap-northeast-2.rds.amazonaws.com:5432/postgres?currentSchema=DouJo
-#      username: postgres
-#      password: password123!
-##  jpa:
-#    show-sql: true
-#    generate-ddl: true # SQL 명령어를 자동으로 수행함
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://database-1.cvlvovcowlp6.ap-northeast-2.rds.amazonaws.com:5432/postgres?currentSchema=Dou_Jo
+    username: postgres
+    password: password123!
+  jpa:
+    show-sql: true
+    generate-ddl: true # SQL 명령어를 자동으로 수행함
 #  cache:
 ##    type: redis
 #  redis:
 #    host: 127.0.0.1
 #    port: 6379
   rabbitmq:
-    host: b-e96b7c3f-e781-4300-8c17-8bfe7a5ecf65.mq.ap-northeast-2.amazonaws.com
+    addresses: amqps://b-e96b7c3f-e781-4300-8c17-8bfe7a5ecf65.mq.ap-northeast-2.amazonaws.com
     username: rabbitmq
     password: password123!

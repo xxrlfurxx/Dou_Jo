@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../provider";
 import { removeProject } from "../provider/modules/project";
+import { requestRemoveProject } from "../middleware/modules/project";
 
 interface ProjectDeatilOffCanvasProp {
   show: boolean;
@@ -108,7 +109,7 @@ function ProjectDeatilOffCanvas({
                 <button
                   className="btn btn-danger"
                   onClick={() => {
-                    dispatch(removeProject(selectedId));
+                    dispatch(requestRemoveProject(selectedId));
                     onHide();
                   }}
                 >

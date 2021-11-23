@@ -5,7 +5,7 @@ import { MutableRefObject, useEffect, useRef, useState } from "react";
 import project, {
   addMilestone,
   initialCompleted,
-  MilestonItem,
+  MilestoneItem,
   modifyMilestone,
   removeMilestone,
 } from "../provider/modules/project";
@@ -58,7 +58,7 @@ function MilestoneCreateOffCanvas({
 
   const add = () => {
     if (milestoneList) {
-      const milestone: MilestonItem = {
+      const milestone: MilestoneItem = {
         id:
           milestoneList.length > 0
             ? milestoneList[milestoneList.length - 1].id + 1
@@ -101,7 +101,7 @@ function MilestoneCreateOffCanvas({
       saveItem(item);
     }
   };
-  const saveItem = (item: MilestonItem) => {
+  const saveItem = (item: MilestoneItem) => {
     dispatch(modifyMilestone(item));
   };
 
@@ -174,7 +174,9 @@ function MilestoneCreateOffCanvas({
                     <button
                       className="btn btn-outline-secondary btn-sm ms-2 me-1 text-nowrap"
                       onClick={() => {
-                        router.push(`/project/milestone/edit/${selectedId}-${item.id}`);
+                        router.push(
+                          `/project/milestone/edit/${selectedId}-${item.id}`
+                        );
                       }}
                     >
                       수정
@@ -184,7 +186,6 @@ function MilestoneCreateOffCanvas({
                       onClick={() => {
                         del(item.id, item.projectId);
                         // dispatch(removeMilestone(item.milestoneId));
-
                       }}
                     >
                       삭제

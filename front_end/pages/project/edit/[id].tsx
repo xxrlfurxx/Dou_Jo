@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../../provider";
 import { MutableRefObject, useRef, useEffect } from "react";
 import { modifyProject, ProjectItem } from "../../../provider/modules/project";
+import { requestModifyProject } from "../../../middleware/modules/project";
 
 const ProjectEdit = () => {
   const router = useRouter();
@@ -12,7 +13,6 @@ const ProjectEdit = () => {
   const projectItem = useSelector((state: RootState) =>
     state.project.data.find((item) => item.id === +id)
   );
-
 
   const isModifyCompleted = useSelector(
     (state: RootState) => state.project.isModifyCompleted
@@ -46,7 +46,7 @@ const ProjectEdit = () => {
     }
   };
   const saveItem = (item: ProjectItem) => {
-    dispatch(modifyProject(item));
+    dispatch(requestModifyProject(item));
   };
 
   return (

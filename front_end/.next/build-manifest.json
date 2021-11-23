@@ -29,6 +29,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/project.js"
+    ],
+    "/project/milestone/edit/[id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/project/milestone/edit/[id].js"
     ]
   },
   "ampFirstPages": []

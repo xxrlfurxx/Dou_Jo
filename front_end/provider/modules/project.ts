@@ -12,11 +12,11 @@ export interface ProjectItem {
   enddate: string;
   manager: string;
   engineer: string;
-  milestone: MilestonItem[];
+  milestone: MilestoneItem[];
   memo: string;
 }
 
-export interface MilestonItem {
+export interface MilestoneItem {
   id: number;
   name: string;
   startdate: string;
@@ -57,166 +57,166 @@ interface ProjectState {
 // photo state를 목록 -> array
 const initialState: ProjectState = {
   data: [
-    // {
-    //   id: 5,
-    //   projectname: "협업툴 만들기5",
-    //   milestone: [
-    //     {
-    //       id: 1,
-    //       name: "drag&drop",
-    //       startdate: "2021-11-01",
-    //       enddate: "2021-11-30",
-    //       projectId: 5,
-    //     },
-    //     {
-    //       id: 2,
-    //       name: "drag&drop2",
-    //       startdate: "2021-11-03",
-    //       enddate: "2021-12-30",
-    //       projectId: 5,
-    //     },
-    //     {
-    //       id: 3,
-    //       name: "drag&drop3",
-    //       startdate: "2021-11-02",
-    //       enddate: "2021-12-01",
-    //       projectId: 5,
-    //     },
-        
-    //   ],
-    //   startdate: "2021-11-01",
-    //   enddate: "2021-11-30",
-    //   manager: "강윤석",
-    //   engineer: "강윤석",
-    //   memo: "작업중",
-    // },
-    // {
-    //   id: 4,
-    //   projectname: "협업툴 만들기4",
-    //   milestone: [
-    //     {
-    //       id: 1,
-    //       projectId: 4,
-    //       name: "메인화면",
-    //       startdate: "2021-11-01",
-    //       enddate: "2021-11-30",
-    //     },
-    //     {
-    //       id: 2,
-    //       name: "메인화면1",
-    //       startdate: "2021-11-03",
-    //       enddate: "2021-12-30",
-    //       projectId: 4,
-    //     },
-    //     {
-    //       id: 3,
-    //       name: "메인화면2",
-    //       startdate: "2021-11-02",
-    //       enddate: "2021-12-01",
-    //       projectId: 4,
-    //     },
-    //   ],
-    //   startdate: "2021-11-01",
-    //   enddate: "2021-11-30",
-    //   manager: "강윤석",
-    //   engineer: "허준",
-    //   memo: "작업중",
-    // },
-    // {
-    //   id: 3,
-    //   projectname: "협업툴 만들기3",
-    //   milestone: [
-    //     {
-    //       id: 1,
-    //       projectId: 3,
-    //       name: "project제작",
-    //       startdate: "2021-11-01",
-    //       enddate: "2021-11-30",
-    //     },
-    //     {
-    //       id: 2,
-    //       name: "project제작1",
-    //       startdate: "2021-11-03",
-    //       enddate: "2021-12-30",
-    //       projectId: 3,
-    //     },
-    //     {
-    //       id: 3,
-    //       name: "project제작2",
-    //       startdate: "2021-11-02",
-    //       enddate: "2021-12-01",
-    //       projectId: 3,
-    //     },
-    //   ],
-    //   startdate: "2021-11-01",
-    //   enddate: "2021-11-30",
-    //   manager: "허준",
-    //   engineer: "허준",
-    //   memo: "작업중",
-    // },
-    // {
-    //   id: 2,
-    //   projectname: "협업툴 만들기2",
-    //   milestone: [
-    //     {
-    //       id: 1,
-    //       projectId: 2,
-    //       name: "wiki제작",
-    //       startdate: "2021-11-01",
-    //       enddate: "2021-11-30",
-    //     },
-    //     {
-    //       id: 2,
-    //       name: "wiki제작1",
-    //       startdate: "2021-11-03",
-    //       enddate: "2021-12-30",
-    //       projectId: 2,
-    //     },{
-    //       id: 3,
-    //       name: "wiki제작2",
-    //       startdate: "2021-11-02",
-    //       enddate: "2021-12-01",
-    //       projectId: 2,
-    //     },
-    //   ],
-    //   startdate: "2021-11-01",
-    //   enddate: "2021-11-30",
-    //   manager: "이준희",
-    //   engineer: "이준희",
-    //   memo: "작업중",
-    // },
-    // {
-    //   id: 1,
-    //   projectname: "협업툴 만들기1",
-    //   milestone: [
-    //     {
-    //       id: 1,
-    //       projectId: 1,
-    //       name: "borad제작",
-    //       startdate: "2021-11-01",
-    //       enddate: "2021-11-30",
-    //     },
-    //     {
-    //       id: 2,
-    //       name: "borad제작1",
-    //       startdate: "2021-11-03",
-    //       enddate: "2021-12-30",
-    //       projectId: 1,
-    //     },
-    //     {
-    //       id: 3,
-    //       name: "borad제작2",
-    //       startdate: "2021-11-02",
-    //       enddate: "2021-12-01",
-    //       projectId: 1,
-    //     },
-    //   ],
-    //   startdate: "2021-11-01",
-    //   enddate: "2021-11-30",
-    //   manager: "강윤석",
-    //   engineer: "강윤석",
-    //   memo: "작업중",
-    // },
+    {
+      id: 5,
+      projectname: "협업툴 만들기5",
+      milestone: [
+        {
+          id: 1,
+          name: "drag&drop",
+          startdate: "2021-11-01",
+          enddate: "2021-11-30",
+          projectId: 5,
+        },
+        {
+          id: 2,
+          name: "drag&drop2",
+          startdate: "2021-11-03",
+          enddate: "2021-12-30",
+          projectId: 5,
+        },
+        {
+          id: 3,
+          name: "drag&drop3",
+          startdate: "2021-11-02",
+          enddate: "2021-12-01",
+          projectId: 5,
+        },
+      ],
+      startdate: "2021-11-01",
+      enddate: "2021-11-30",
+      manager: "강윤석",
+      engineer: "강윤석",
+      memo: "작업중",
+    },
+    {
+      id: 4,
+      projectname: "협업툴 만들기4",
+      milestone: [
+        {
+          id: 1,
+          projectId: 4,
+          name: "메인화면",
+          startdate: "2021-11-01",
+          enddate: "2021-11-30",
+        },
+        {
+          id: 2,
+          name: "메인화면1",
+          startdate: "2021-11-03",
+          enddate: "2021-12-30",
+          projectId: 4,
+        },
+        {
+          id: 3,
+          name: "메인화면2",
+          startdate: "2021-11-02",
+          enddate: "2021-12-01",
+          projectId: 4,
+        },
+      ],
+      startdate: "2021-11-01",
+      enddate: "2021-11-30",
+      manager: "강윤석",
+      engineer: "허준",
+      memo: "작업중",
+    },
+    {
+      id: 3,
+      projectname: "협업툴 만들기3",
+      milestone: [
+        {
+          id: 1,
+          projectId: 3,
+          name: "project제작",
+          startdate: "2021-11-01",
+          enddate: "2021-11-30",
+        },
+        {
+          id: 2,
+          name: "project제작1",
+          startdate: "2021-11-03",
+          enddate: "2021-12-30",
+          projectId: 3,
+        },
+        {
+          id: 3,
+          name: "project제작2",
+          startdate: "2021-11-02",
+          enddate: "2021-12-01",
+          projectId: 3,
+        },
+      ],
+      startdate: "2021-11-01",
+      enddate: "2021-11-30",
+      manager: "허준",
+      engineer: "허준",
+      memo: "작업중",
+    },
+    {
+      id: 2,
+      projectname: "협업툴 만들기2",
+      milestone: [
+        {
+          id: 1,
+          projectId: 2,
+          name: "wiki제작",
+          startdate: "2021-11-01",
+          enddate: "2021-11-30",
+        },
+        {
+          id: 2,
+          name: "wiki제작1",
+          startdate: "2021-11-03",
+          enddate: "2021-12-30",
+          projectId: 2,
+        },
+        {
+          id: 3,
+          name: "wiki제작2",
+          startdate: "2021-11-02",
+          enddate: "2021-12-01",
+          projectId: 2,
+        },
+      ],
+      startdate: "2021-11-01",
+      enddate: "2021-11-30",
+      manager: "이준희",
+      engineer: "이준희",
+      memo: "작업중",
+    },
+    {
+      id: 1,
+      projectname: "협업툴 만들기1",
+      milestone: [
+        {
+          id: 1,
+          projectId: 1,
+          name: "borad제작",
+          startdate: "2021-11-01",
+          enddate: "2021-11-30",
+        },
+        {
+          id: 2,
+          name: "borad제작1",
+          startdate: "2021-11-03",
+          enddate: "2021-12-30",
+          projectId: 1,
+        },
+        {
+          id: 3,
+          name: "borad제작2",
+          startdate: "2021-11-02",
+          enddate: "2021-12-01",
+          projectId: 1,
+        },
+      ],
+      startdate: "2021-11-01",
+      enddate: "2021-11-30",
+      manager: "강윤석",
+      engineer: "강윤석",
+      memo: "작업중",
+    },
   ],
   isFetched: false,
   page: 0,
@@ -318,7 +318,7 @@ const projectSlice = createSlice({
       // 데이터를 받아옴으로 값을 남김
       state.isFetched = true;
     },
-    addMilestone: (state, action: PayloadAction<MilestonItem>) => {
+    addMilestone: (state, action: PayloadAction<MilestoneItem>) => {
       const milestone = action.payload;
       console.log("--in reducer function--");
       const project = state.data.find(
@@ -340,7 +340,7 @@ const projectSlice = createSlice({
       // id에 해당하는 아이템의 index를 찾고 그 index로 splice를 한다.
       const findProject = state.data.find((item) => item.id === projectId);
       const findMilestoneIndex = findProject?.milestone.findIndex(
-        (item) => item.id === milestoneId +1
+        (item) => item.id === milestoneId
       );
       if (findMilestoneIndex) {
         findProject?.milestone.splice(findMilestoneIndex, 1);
@@ -348,7 +348,7 @@ const projectSlice = createSlice({
 
       state.isRemoveCompleted = true; // 삭제 되었음을 표시
     },
-    modifyMilestone: (state, action: PayloadAction<MilestonItem>) => {
+    modifyMilestone: (state, action: PayloadAction<MilestoneItem>) => {
       // 생성해서 넘긴 객체
       const modifyItem = action.payload;
       // state에 있는 객체
@@ -362,13 +362,13 @@ const projectSlice = createSlice({
         (modifyItem.name = milestonItem.name),
           (modifyItem.startdate = milestonItem.startdate),
           (modifyItem.enddate = milestonItem.enddate);
-      } 
+      }
       state.isModifyCompleted = true; // 변경 되었음을 표시
-      console.log("completed")
+      console.log("completed");
     },
     initialMilestoneItem: (state, action: PayloadAction<ProjectItem>) => {
       const milestone = action.payload;
-      
+
       // 백엔드에서 받아온 데이터
       state.data = [{ ...milestone }];
     },

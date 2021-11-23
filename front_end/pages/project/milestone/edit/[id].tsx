@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "../../../../provider";
 import { MutableRefObject, useRef, useEffect } from "react";
-import { MilestonItem } from "../../../../provider/modules/project";
+import { MilestoneItem } from "../../../../provider/modules/project";
 import { modifyMilestone } from "../../../../provider/modules/project";
 
 const MilestoenEdit = () => {
@@ -46,7 +46,7 @@ const MilestoenEdit = () => {
       saveItem(item);
     }
   };
-  const saveItem = (item: MilestonItem) => {
+  const saveItem = (item: MilestoneItem) => {
     dispatch(modifyMilestone(item));
   };
 

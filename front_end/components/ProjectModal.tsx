@@ -45,7 +45,7 @@ function ProjectModal({ show, onHide }: ProjectModalProp) {
       milestone: [],
     };
     // dispatch(addProject(item));   // 기존 redux action
-     dispatch(requestAddProject(item));  // saga action으로 대체
+    dispatch(requestAddProject(item)); // saga action으로 대체
     router.push(`/project`);
   };
 
@@ -92,7 +92,7 @@ function ProjectModal({ show, onHide }: ProjectModalProp) {
                   aria-label="Default select example"
                   ref={manager}
                 >
-                  <option selected>관리자</option>
+                  <option value="관리자">관리자</option>
                   <option value="강윤석">강윤석</option>
                   <option value="이준희">이준희</option>
                   <option value="허준">허준</option>
@@ -108,7 +108,7 @@ function ProjectModal({ show, onHide }: ProjectModalProp) {
                   aria-label="Default select example"
                   ref={engineer}
                 >
-                  <option selected>담당자</option>
+                  <option value="담당자">담당자</option>
                   <option value="강윤석">강윤석</option>
                   <option value="이준희">이준희</option>
                   <option value="허준">허준</option>
