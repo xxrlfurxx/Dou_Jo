@@ -2,16 +2,16 @@ import axios from "axios";
 
 export interface MilestoneItemResponse {
   id: number;
-  name: string;
-  startdate: string;
-  enddate: string;
+  Name: string;
+  startDate: string;
+  endDate: string;
   projectId: number;
 }
 
 export interface MilestoneItemRequest {
-  name: string;
-  startdate: string;
-  enddate: string;
+  Name: string;
+  startDate: string;
+  endDate: string;
 }
 
 // 서버하고 데이터 연동하는 api처리 목록을 별도의 객체로 작성

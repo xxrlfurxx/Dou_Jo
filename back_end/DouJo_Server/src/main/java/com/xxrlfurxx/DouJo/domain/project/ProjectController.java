@@ -57,7 +57,8 @@ public class ProjectController {
 				.endDate(project.getEndDate())
 				.manager(project.getManager())
 				.engineer(project.getEngineer())
-				.memo(project.getMemo())				
+				.memo(project.getMemo())	
+				.milestone(project.getMilestone())
 				.build();
 
 		Project projectSaved = projectRepo.save(projectItem);
@@ -103,6 +104,7 @@ public class ProjectController {
 		projectToSave.setManager(TextProcesser.getPlainText(project.getManager()));
 		projectToSave.setEngineer(TextProcesser.getPlainText(project.getEngineer()));
 		projectToSave.setMemo(project.getMemo());
+		projectToSave.setMilestone(project.getMilestone());
 
 		Project projectToSaved = projectRepo.save(projectToSave);
 

@@ -1,30 +1,30 @@
 import axios from "axios";
 
-export interface ProjectPagingReponse {
-  content: ProjectItemResponse[];
-  last: boolean;
-  totalElements: number;
-  totalPages: number;
-  size: number;
-  number: number;
-}
+// export interface ProjectPagingReponse {
+//   content: ProjectItemResponse[];
+//   last: boolean;
+//   totalElements: number;
+//   totalPages: number;
+//   size: number;
+//   number: number;
+// }
 
 export interface ProjectItemResponse {
-  projectname: string;
+  projectName: string;
   id: number;
   milestone: [];
-  startdate: string;
-  enddate: string;
+  startDate: string;
+  endDate: string;
   manager: string;
   engineer: string;
   memo: string;
 }
 
 export interface ProjectItemRequest {
-  projectname: string;
+  projectName: string;
   milestone: [];
-  startdate: string;
-  enddate: string;
+  startDate: string;
+  endDate: string;
   manager: string;
   engineer: string;
   memo: string;

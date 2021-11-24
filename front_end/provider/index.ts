@@ -7,7 +7,7 @@ import taskModalReducer from "./modules/taskModal";
 import statusReducer from "./modules/status";
 import projectReducer from "./modules/project";
 import rootSaga from "../middleware/modules/project";
-import milestoneReducer from "../provider/modules/milestone";
+// import milestoneReducer from "../provider/modules/milestone";
 // saga middleware 생성
 // middleware: 중간에 뭔가를 처리하는 소프트웨어
 // redux saga는 redux 상태처리 전/후에 뭔가를 해주는 라이브러리
@@ -24,7 +24,7 @@ export const store = configureStore({
     taskModal: taskModalReducer,
     status: statusReducer,
     project: projectReducer,
-    milestone: milestoneReducer,
+    // milestone: milestoneReducer,
   },
   // redux store(dispatcher)에 미들웨어 적용
   // middleware는 여러개 사용할 수 있음, [defaultMiddlware, sagaMiddleware, thunkMiddlware]

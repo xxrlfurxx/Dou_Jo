@@ -21,8 +21,8 @@ export const requestAddProject = createAction<ProjectItem>(
   `${projectReducer.name}/requestAddProject`
 );
 
-export const requestFetchProject = createAction<ProjectItem>(
-  `${projectReducer.name}/requestFetchProject`
+export const requestFetchProjects = createAction(
+  `${projectReducer.name}/requestFetchProjects`
 );
 
 export const requestRemoveProject = createAction<number>(
@@ -44,10 +44,10 @@ function* addData(action: PayloadAction<ProjectItem>) {
 
     // res api로 보낼 요청객체
     const projectItemRequest: ProjectItemRequest = {
-      projectname: projectItemPayload.projectname,
+      projectName: projectItemPayload.projectname,
       milestone: [],
-      startdate: projectItemPayload.startdate,
-      enddate: projectItemPayload.enddate,
+      startDate: projectItemPayload.startdate,
+      endDate: projectItemPayload.enddate,
       manager: projectItemPayload.manager,
       engineer: projectItemPayload.engineer,
       memo: projectItemPayload.memo,
@@ -64,9 +64,9 @@ function* addData(action: PayloadAction<ProjectItem>) {
 
     const projectItem: ProjectItem = {
       id: result.data.id,
-      projectname: result.data.projectname,
-      startdate: result.data.startdate,
-      enddate: result.data.enddate,
+      projectname: result.data.projectName,
+      startdate: result.data.startDate,
+      enddate: result.data.endDate,
       manager: result.data.manager,
       engineer: result.data.engineer,
       milestone: result.data.milestone,
@@ -83,14 +83,14 @@ function* addData(action: PayloadAction<ProjectItem>) {
 }
 
 function* modifyData(action: PayloadAction<ProjectItem>) {
-  yield console.log("----Saga: modify project Data----");
+  yield console.log("modify project Data");
   const projectItemPayload = action.payload;
   // rest api로 보낼 요청 객체
   const projectItemRequest: ProjectItemRequest = {
-    projectname: projectItemPayload.projectname,
+    projectName: projectItemPayload.projectname,
     milestone: [],
-    startdate: projectItemPayload.startdate,
-    enddate: projectItemPayload.enddate,
+    startDate: projectItemPayload.startdate,
+    endDate: projectItemPayload.enddate,
     manager: projectItemPayload.manager,
     engineer: projectItemPayload.engineer,
     memo: projectItemPayload.memo,
@@ -103,10 +103,10 @@ function* modifyData(action: PayloadAction<ProjectItem>) {
   // 백엔드에서 처리한 데이터 객체로 state를 변경할 payload객체 생성
   const projectItem: ProjectItem = {
     id: result.data.id,
-    projectname: result.data.projectname,
+    projectname: result.data.projectName,
     milestone: result.data.milestone,
-    startdate: result.data.startdate,
-    enddate: result.data.enddate,
+    startdate: result.data.startDate,
+    enddate: result.data.endDate,
     manager: result.data.manager,
     engineer: result.data.engineer,
     memo: result.data.memo,
@@ -122,14 +122,15 @@ function* fetchData() {
   const result: AxiosResponse<ProjectItemResponse[]> = yield call(
     api.fetchProject
   );
+
   const project = result.data.map(
     (item) =>
       ({
         id: item.id,
-        projectname: item.projectname,
+        projectname: item.projectName,
         milestone: item.milestone,
-        startdate: item.startdate,
-        enddate: item.enddate,
+        startdate: item.startDate,
+        enddate: item.endDate,
         manager: item.manager,
         engineer: item.engineer,
         memo: item.memo,
@@ -152,7 +153,8 @@ function* removeData(action: PayloadAction<number>) {
 export default function* projectSaga() {
   // dispatcher 동일한 타입의 액션을 모두 처리
   yield takeEvery(requestAddProject, addData);
-  yield takeEvery(requestFetchProject, fetchData);
-  yield takeLatest(requestModifyProject, modifyData);
-  yield takeLatest(requestRemoveProject, removeData);
+  yield takeEvery(requestModifyProject, modifyData);
+  yield takeEvery(requestRemoveProject, removeData);
+
+  yield takeLatest(requestFetchProjects, fetchData);
 }

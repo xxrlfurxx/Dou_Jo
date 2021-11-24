@@ -6,7 +6,9 @@ import ProjectDetailOffCanvas from "../../components/ProjectDetailOffCanvas";
 import MilestoneCreateOffCanvas from "../../components/MilestoneCreateOffCanvas";
 import api from "../../api/project";
 import { ProjectItem } from "../../provider/modules/project";
-import { requestFetchProject } from "../../middleware/modules/project";
+import projectSaga, {
+  requestFetchProjects,
+} from "../../middleware/modules/project";
 
 function Project() {
   const project = useSelector((state: RootState) => state.project);
@@ -24,7 +26,9 @@ function Project() {
   // async: 비동기 처리를 할 수 있는 함수
   // 코드가 순차적인 처리가 아닌 다른 컨텐츠에 수행될 수 있도록 함
 
-  useEffect(() => {}, [dispatch, project.isFetched]);
+  useEffect(() => {
+    dispatch(requestFetchProjects());
+  }, []);
 
   return (
     <>
@@ -92,7 +96,7 @@ function Project() {
                       e.cancelable = true;
                     }}
                   >
-                    {item.milestone[0]?.name}
+                    {item.milestone && item.milestone[0]?.name}
                     <button
                       className="btn btn-light"
                       style={{ padding: "0.1rem 0.1rem" }}
