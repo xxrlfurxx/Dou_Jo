@@ -9,7 +9,7 @@ export interface MilestoneItemResponse {
 }
 
 export interface MilestoneItemRequest {
-  Name: string;
+  name: string;
   startDate: string;
   endDate: string;
 }

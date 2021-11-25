@@ -25,7 +25,7 @@ export const requestFetchMilestone = createAction<MilestoneItem>(
 );
 
 export const requestRemoveMilestone = createAction<number>(
-  `${milestoneReducer.name}/requestRemoveProject`
+  `${milestoneReducer.name}/requestRemoveMilestone`
 );
 
 export const requestModifyMilestone = createAction<MilestoneItem>(
@@ -43,7 +43,7 @@ function* addData(action: PayloadAction<MilestoneItem>) {
 
     // res api로 보낼 요청객체
     const milestoneItemRequest: MilestoneItemRequest = {
-      Name: milestoneItemPayload.name,
+      name: milestoneItemPayload.name,
       startDate: milestoneItemPayload.startdate,
       endDate: milestoneItemPayload.enddate,
     };
@@ -79,7 +79,7 @@ function* modifyData(action: PayloadAction<MilestoneItem>) {
   const milestoneItemPayload = action.payload;
   // rest api로 보낼 요청 객체
   const milestoneItemRequest: MilestoneItemRequest = {
-    Name: milestoneItemPayload.name,
+    name: milestoneItemPayload.name,
     startDate: milestoneItemPayload.startdate,
     endDate: milestoneItemPayload.enddate,
   };
@@ -127,7 +127,7 @@ function* removeData(action: PayloadAction<number>) {
   const id = action.payload;
   const result: AxiosResponse<boolean> = yield call(api.removeMilestone, id);
   if (result.data) {
-    yield put(removeMilestone([]));
+    yield put(removeMilestone(milestoneId));
   }
   yield put(initialCompleted());
 }

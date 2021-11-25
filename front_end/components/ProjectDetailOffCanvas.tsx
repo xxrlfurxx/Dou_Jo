@@ -119,6 +119,10 @@ function ProjectDeatilOffCanvas({
               </div>
             </div>
           </section>
+          {/* <div style={{ width: "100%" }}> */}
+          {/* <h3 style={{ textAlign: "center" }}>Time Line</h3> */}
+          {/* {data && <AmountsByDates data={data.amountsByDates} />} */}
+          {/* </div> */}
         </Offcanvas.Body>
       </Offcanvas>
     </>

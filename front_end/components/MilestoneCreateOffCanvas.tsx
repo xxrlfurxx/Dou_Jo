@@ -12,7 +12,10 @@ import project, {
 import { ProjectItem } from "../provider/modules/project";
 import { useRouter } from "next/router";
 import MilestoenEdit from "../pages/project/milestone/edit/[id]";
-import { requestAddMilestone } from "../middleware/modules/milestone";
+import {
+  requestAddMilestone,
+  requestModifyMilestone,
+} from "../middleware/modules/milestone";
 
 interface MilestoneCreateOffCanvasProp {
   show: boolean;
@@ -103,7 +106,7 @@ function MilestoneCreateOffCanvas({
     }
   };
   const saveItem = (item: MilestoneItem) => {
-    dispatch(modifyMilestone(item));
+    dispatch(requestModifyMilestone(item));
   };
 
   return (
@@ -195,17 +198,7 @@ function MilestoneCreateOffCanvas({
                 ))}
             </ul>
             <div className="d-flex">
-              <div style={{ width: "50%" }}>
-                {/* <button
-                  className="btn btn-secondary me-1"
-                  onClick={() => {
-                    router.push(`/project`);
-                  }}
-                >
-                  <i className="bi bi-grid-3x3-gap me-1"></i>
-                  목록
-                </button> */}
-              </div>
+              <div style={{ width: "50%" }}></div>
               <div
                 style={{ width: "50%" }}
                 className="d-flex justify-content-end"

@@ -1,0 +1,20 @@
+물어볼것 들
+milestone saga (middleware) 
+redux milestone(provider)
+
+request로 패치 데이터 땡겨왔을때 데이터는 들어가는데 시작일 종료일이 표시 안되는것;
+
+request add
+request del
+
+del
+
+milestone detail 수정 
+
+프로젝트 아이디도 삭제하고 다시 생성하면 땡겨져서 나오게하는거 되면 좋겟따;
+
+((될 수 있으면 마일스톤 타임라인 차트도 )) 안되면 말고;;
+
+마일스톤 + 누를떄 디테일 같이 뜨는거도 따로 뜨도록하고;;
+
+ui css 좀 괜찮게 고치기;
