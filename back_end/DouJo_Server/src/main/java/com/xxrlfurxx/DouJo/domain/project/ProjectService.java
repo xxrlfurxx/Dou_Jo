@@ -17,10 +17,12 @@ public class ProjectService {
 	}
 	
 	public void sendModifiedProject(Project project) {
+		System.out.println(project);
 		rabbit.convertAndSend("project.modified.send", project);
 	}
 	
 	public void sendRemoveProject(long projectId) {
+		System.out.println(projectId);
 		rabbit.convertAndSend("project.removed.send", projectId);
 	}
 	

@@ -12,6 +12,7 @@ import project, {
 import { ProjectItem } from "../provider/modules/project";
 import { useRouter } from "next/router";
 import MilestoenEdit from "../pages/project/milestone/edit/[id]";
+import { requestAddMilestone } from "../middleware/modules/milestone";
 
 interface MilestoneCreateOffCanvasProp {
   show: boolean;
@@ -69,7 +70,7 @@ function MilestoneCreateOffCanvas({
         projectId: selectedId,
       };
 
-      dispatch(addMilestone(milestone));
+      dispatch(requestAddMilestone(milestone));
       console.log(milestone.id);
     }
 

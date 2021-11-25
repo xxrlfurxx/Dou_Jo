@@ -58,7 +58,7 @@ public class ProjectController {
 				.manager(project.getManager())
 				.engineer(project.getEngineer())
 				.memo(project.getMemo())	
-				.milestone(project.getMilestone())
+//				.milestone(project.getMilestone())
 				.build();
 
 		Project projectSaved = projectRepo.save(projectItem);
@@ -86,7 +86,7 @@ public class ProjectController {
 	}
 
 	@PutMapping(value = "/projects/{id}")
-	public Project modifyProjects(@PathVariable long id, @RequestBody Project project, HttpServletResponse res) throws InterruptedException{
+	public Project modifyProjects(@PathVariable long id, @RequestBody Project project, HttpServletResponse res) {
 
 		Optional<Project> projectItem = projectRepo.findById(id);
 		
@@ -97,14 +97,14 @@ public class ProjectController {
 
 		Project projectToSave = projectItem.get();
 		
-		projectToSave.setId(project.getId());
+//		projectToSave.setId(project.getId());
 		projectToSave.setProjectName(project.getProjectName());
 		projectToSave.setStartDate(project.getStartDate());
 		projectToSave.setEndDate(project.getEndDate());
 		projectToSave.setManager(TextProcesser.getPlainText(project.getManager()));
 		projectToSave.setEngineer(TextProcesser.getPlainText(project.getEngineer()));
 		projectToSave.setMemo(project.getMemo());
-		projectToSave.setMilestone(project.getMilestone());
+//		projectToSave.setMilestone(project.getMilestone());
 
 		Project projectToSaved = projectRepo.save(projectToSave);
 
