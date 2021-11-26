@@ -1,4 +1,7 @@
-Spring:
+spring:
+  application:
+    name: project
+  
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://database-1.cvlvovcowlp6.ap-northeast-2.rds.amazonaws.com:5432/postgres?currentSchema=Dou_Jo
@@ -8,7 +11,7 @@ Spring:
     show-sql: true
     generate-ddl: true # SQL 명령어를 자동으로 수행함
 #  cache:
-##    type: redis
+#    type: redis
 #  redis:
 #    host: 127.0.0.1
 #    port: 6379
@@ -16,3 +19,16 @@ Spring:
     addresses: amqps://b-e96b7c3f-e781-4300-8c17-8bfe7a5ecf65.mq.ap-northeast-2.amazonaws.com
     username: rabbitmq
     password: password123!
+eureka:
+  client:
+    service-url:
+      # service registry 주소
+      defaultZone: http://ec2-3-37-96-216.ap-northeast-2.compute.amazonaws.com:8761/eureka/
+  instance:
+      # 본인이 원래 돌리고 있어서 인스턴스 주소
+    hostname: ec2-52-79-96-141.ap-northeast-2.compute.amazonaws.com
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"        

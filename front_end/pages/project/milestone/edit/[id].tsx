@@ -4,6 +4,7 @@ import { AppDispatch, RootState } from "../../../../provider";
 import { MutableRefObject, useRef, useEffect } from "react";
 import { MilestoneItem } from "../../../../provider/modules/project";
 import { modifyMilestone } from "../../../../provider/modules/project";
+import { requestModifyMilestone } from "../../../../middleware/modules/milestone";
 
 const MilestoenEdit = () => {
   const router = useRouter();
@@ -47,7 +48,7 @@ const MilestoenEdit = () => {
     }
   };
   const saveItem = (item: MilestoneItem) => {
-    dispatch(modifyMilestone(item));
+    dispatch(requestModifyMilestone(item));
   };
 
   return (

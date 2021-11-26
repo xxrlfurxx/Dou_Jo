@@ -59,7 +59,7 @@ function* addData(action: PayloadAction<MilestoneItem>) {
 
     const milestoneItem: MilestoneItem = {
       id: result.data.id,
-      name: result.data.Name,
+      name: result.data.name,
       startdate: result.data.startDate,
       enddate: result.data.endDate,
       projectId: result.data.projectId,
@@ -91,7 +91,7 @@ function* modifyData(action: PayloadAction<MilestoneItem>) {
   // 백엔드에서 처리한 데이터 객체로 state를 변경할 payload객체 생성
   const milestoneItem: MilestoneItem = {
     id: result.data.id,
-    name: result.data.Name,
+    name: result.data.name,
     startdate: result.data.startDate,
     enddate: result.data.endDate,
     projectId: result.data.projectId,
@@ -111,7 +111,7 @@ function* fetchData() {
     (item) =>
       ({
         id: item.id,
-        name: item.Name,
+        name: item.name,
         startdate: item.startDate,
         enddate: item.endDate,
         projectId: item.projectId,
